@@ -180,6 +180,179 @@ main {
     line-height: 1.5;
 }
 
+/* ---------- How it works / Features (reuse brand tokens only) ---------- */
+.section-title {
+    font-family: var(--sf-font-display);
+    font-size: clamp(32px, 3.2vw, 44px);
+    font-weight: 500;
+    letter-spacing: -1.6px;
+    line-height: 1.12;
+    margin: 0;
+    color: var(--sf-color-text-primary);
+}
+
+.section-subtitle {
+    margin: 12px 0 0;
+    max-width: 680px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--sf-color-text-muted);
+}
+
+.how-it-works,
+.features {
+    padding: 56px 0 8px;
+    border-top: 1px solid var(--sf-color-card-border);
+}
+
+.how-it-works {
+    margin-top: 26px;
+}
+
+.features {
+    padding-bottom: 64px;
+}
+
+.hiw-steps {
+    list-style: none;
+    margin: 36px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    counter-reset: none;
+}
+
+.hiw-step {
+    position: relative;
+    background: var(--sf-color-card);
+    border: 1px solid var(--sf-color-card-border);
+    border-radius: var(--sf-radius-xl);
+    padding: 26px 24px 24px;
+}
+
+.step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--sf-button-radius);
+    background: var(--sf-color-selection);
+    color: var(--sf-color-accent);
+    font: 650 15px/1 var(--sf-font-sans);
+}
+
+.step-title {
+    margin: 16px 0 0;
+    font-family: var(--sf-font-display);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    color: var(--sf-color-text-primary);
+}
+
+.step-desc,
+.feature-desc {
+    margin: 8px 0 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--sf-color-text-secondary);
+}
+
+.feature-grid {
+    margin: 36px 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.feature-card {
+    background: var(--sf-color-card);
+    border: 1px solid var(--sf-color-card-border);
+    border-radius: var(--sf-radius-xl);
+    padding: 26px 24px 24px;
+}
+
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--sf-radius-lg);
+    background: var(--sf-color-selection);
+    color: var(--sf-color-accent);
+}
+
+.feature-title {
+    margin: 16px 0 0;
+    font-family: var(--sf-font-display);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: var(--sf-color-text-primary);
+}
+
+/* ---------- Footer ---------- */
+.sf-footer {
+    border-top: 1px solid var(--sf-color-card-border);
+    background: var(--sf-color-bg-canvas);
+}
+
+.sf-footer-inner {
+    max-width: var(--sf-container-max);
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px var(--sf-container-pad) 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.sf-footer-wordmark {
+    font-family: var(--sf-font-display);
+    font-size: 22px;
+    font-weight: 650;
+    letter-spacing: -1px;
+    color: var(--sf-color-text-primary);
+    text-decoration: none;
+}
+
+.sf-footer-tagline {
+    margin: 6px 0 0;
+    font-size: 14px;
+    color: var(--sf-color-text-muted);
+}
+
+.sf-footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding-top: 6px;
+}
+
+.sf-footer-nav a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--sf-color-text-muted);
+    text-decoration: none;
+}
+
+.sf-footer-nav a:hover {
+    color: var(--sf-color-text-primary);
+}
+
+.sf-footer-copy {
+    margin: 6px 0 0;
+    font-size: 13px;
+    color: var(--sf-color-text-muted);
+    padding-top: 6px;
+}
+
 /* ---------- Focus / selection ---------- */
 a:focus-visible,
 button:focus-visible {
@@ -188,6 +361,16 @@ button:focus-visible {
 }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+    .hiw-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 720px) {
     :root {
         --sf-container-pad: 20px;
@@ -213,5 +396,33 @@ button:focus-visible {
         min-height: 46px;
         font-size: 15px;
         padding: 11px 19px;
+    }
+
+    .section-title {
+        letter-spacing: -1.2px;
+    }
+
+    .how-it-works,
+    .features {
+        padding: 40px 0 4px;
+    }
+
+    .features {
+        padding-bottom: 48px;
+    }
+
+    .hiw-steps,
+    .feature-grid {
+        gap: 16px;
+    }
+
+    .hiw-step,
+    .feature-card {
+        padding: 20px 18px 18px;
+    }
+
+    .sf-footer-inner {
+        flex-direction: column;
+        gap: 18px;
     }
 }
